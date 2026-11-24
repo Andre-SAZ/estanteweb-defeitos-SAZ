@@ -32,7 +32,7 @@ public class LoginController {
             return "login";
         }
 
-        session.setAttribute("usuarioLogado", usuario);
+        session.setAttribute("usuario", usuario);
         return "redirect:/livros/html";
     }
 
