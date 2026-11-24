@@ -30,6 +30,9 @@ public class LivroController {
     @GetMapping("/livros/{id}")
     public String exibir(@PathVariable Long id, Model model) {
         Livro livro = repositorio.buscarPorId(id);
+        if (livro == null) {
+            return "error/404";
+        }
         model.addAttribute("livro", livro);
         return "livro";
     }
