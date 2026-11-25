@@ -38,6 +38,7 @@ public class LoginController {
 
     @GetMapping("/logout")
     public String sair(HttpSession session) {
+        session.removeAttribute("usuario");
         session.invalidate();
         return "redirect:/login";
     }
