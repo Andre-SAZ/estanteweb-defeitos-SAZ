@@ -28,11 +28,11 @@
         </nav>
     </div>
     <div>
-        <#if usuarioLogado??>
-            Olá, ${usuarioLogado.nome}
-            <a href="/logout">Sair</a>
-        <#else>
-            <a href="/login">Entrar</a>
-        </#if>
+            #if usuario??
+        Olá, ${usuario.nome}
+        <a href="/logout">Sair</a>
+            #else
+        <a href="/login">Entrar</a>
+            #/
     </div>
 </header>
